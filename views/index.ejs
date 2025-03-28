@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/Style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading">D e v - W r i t e &nbsp; 1.0</h1>
+    <div class="body">
+      <div class="">
+        <form action="/create" method="post">
+          <input
+            class="input-title"
+            name="title"
+            type="text"
+            required
+            placeholder="Title . . . . . ."
+          />
+          <textarea
+            name="details"
+            class="textarea"
+            required
+            placeholder="Write Your Notes....."
+          ></textarea>
+          <input class="submit" type="submit" value="Create Task" />
+        </form>
+      </div>
+    </div>
+    <div class="tasks">
+      <% if(files.length > 0){ %> <% files.forEach(function(val){ %>
+      <div class="task">
+        <h1 class="nme"> ❥ <%= val%></h1>
+        <p><a class="open" href="/file/<%= val %>">Open</a>
+        <h2 class="edit"><a href="/edit/<%= val %>" > Edit</a></h2></p>
+      </div>
+      <% }) %> <% } else{ %>
+      <h1></h1>
+      <% } %>
+    </div>
+  </body>
+</html>
